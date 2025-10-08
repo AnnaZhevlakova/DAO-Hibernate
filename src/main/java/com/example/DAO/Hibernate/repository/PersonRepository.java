@@ -1,16 +1,21 @@
 package com.example.DAO.Hibernate.repository;
 
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+
+import com.example.DAO.Hibernate.entity.Person;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
+@Scope("request")
 @Repository
 public class PersonRepository {
-    private final NamedParameterJdbcTemplate jdbcTemplate;
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    public PersonRepository(NamedParameterJdbcTemplate jdbcTemplate){
-        this.jdbcTemplate = jdbcTemplate;
-    }
-     public String getPersonsByCity(String city){
-        return city;
+     public List<Person> getPersonsByCity(String city){
+         throw new UnsupportedOperationException("Method not implemented yet");
      }
 }

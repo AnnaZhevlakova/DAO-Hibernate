@@ -67,11 +67,6 @@
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <dependency>
-            <groupId>org.hibernate.orm</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>7.1.3.Final</version>
-        </dependency>
     </dependencies>
 
     <build>
