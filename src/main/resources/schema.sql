@@ -1,4 +1,4 @@
-create table IF NOT EXISTS netology.person(
+create table IF NOT EXISTS netology.persons(
 name varchar(255) not null,
 surname varchar(255) not null,
 age int not null,
@@ -10,7 +10,7 @@ PRIMARY KEY (name, surname, age)
 
 
 
-MERGE INTO netology.person AS target
+MERGE INTO netology.persons AS target
 USING (VALUES
 ('Cveta','Ivanova',20,'+79826342536','MOSCOW'),
 ('Anna','Petrova',25,'+79828735452','SPB'),
