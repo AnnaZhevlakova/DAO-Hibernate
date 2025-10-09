@@ -12,16 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/persons")
 public class PersonController {
- private PersonRepository personRepository;
+    private PersonRepository personRepository;
 
-    public PersonController(PersonRepository personRepository){
+    public PersonController(PersonRepository personRepository) {
         this.personRepository = personRepository;
 
     }
 
-    @GetMapping("/by-person")
-    public ResponseEntity<?> fetchCityByСlientName() throws Exception {
-        var result = personRepository.findAllCustom();
+    @GetMapping("/by-city")
+    public ResponseEntity<?> fetchCityByСlientName(String city) throws Exception {
+        var result = personRepository.getPersonsByCity(city);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 }

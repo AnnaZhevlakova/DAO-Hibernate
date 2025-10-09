@@ -11,6 +11,7 @@ import lombok.Data;
 @Builder
 @Data
 @Entity
+@Table(name = "persons", schema = "netology")
 public class Person {
     @EmbeddedId
     private PersonId id;
@@ -26,8 +27,8 @@ public class Person {
 
     }
 
-    public Person(PersonId id,String phoneNumber,String cityOfLiving){
-       this.id = id;
+    public Person(PersonId id, String phoneNumber, String cityOfLiving) {
+        this.id = id;
         this.phoneNumber = phoneNumber;
         this.cityOfLiving = cityOfLiving;
     }
@@ -40,7 +41,7 @@ public class Person {
         this.id = id;
     }
 
-    public String getPhoneNumber(){
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 

@@ -21,4 +21,5 @@ public class PersonId implements Serializable {
 
     @Column(name = "age", nullable = false)
     private int age;
+
 }
