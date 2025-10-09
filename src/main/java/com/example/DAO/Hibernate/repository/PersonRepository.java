@@ -15,7 +15,9 @@ public class PersonRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
-     public List<Person> getPersonsByCity(String city){
-         throw new UnsupportedOperationException("Method not implemented yet");
-     }
+
+    public List<Person> findAllCustom() {
+        return entityManager.createQuery("SELECT p FROM Person p", Person.class)
+                .getResultList();
+    }
 }

@@ -19,9 +19,9 @@ public class PersonController {
 
     }
 
-    @GetMapping("/by-city")
-    public ResponseEntity<?> fetchCityByСlientName(String city) throws Exception {
-        var result = personRepository.getPersonsByCity(city);
+    @GetMapping("/by-person")
+    public ResponseEntity<?> fetchCityByСlientName() throws Exception {
+        var result = personRepository.findAllCustom();
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 }
