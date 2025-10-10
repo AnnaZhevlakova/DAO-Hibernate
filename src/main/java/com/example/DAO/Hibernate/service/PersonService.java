@@ -3,6 +3,7 @@ package com.example.DAO.Hibernate.service;
 
 import com.example.DAO.Hibernate.dto.PersonDto;
 import com.example.DAO.Hibernate.entity.Person;
+import com.example.DAO.Hibernate.repository.PersonRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.hibernate.Session;
@@ -16,6 +17,11 @@ import java.util.List;
 public class PersonService {
     @PersistenceContext
     private EntityManager entityManager;
+
+    private PersonRepository personRepository;
+    public PersonService(PersonRepository personRepository){
+       this.personRepository = personRepository;
+    }
 
 
     public List<PersonDto> getPersonsByCity(String city) {
