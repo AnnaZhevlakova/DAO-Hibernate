@@ -17,11 +17,11 @@ public class PersonId implements Serializable {
     @Column(name = "age", nullable = false)
     private int age;
 
-    public PersonId(){
+    public PersonId() {
 
     }
 
-    public  PersonId(String name, String surname, int age){
+    public PersonId(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
         this.age = age;

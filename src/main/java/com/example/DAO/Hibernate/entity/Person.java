@@ -19,7 +19,8 @@ public class Person {
     @Column(name = "city_of_living")
     private String cityOfLiving;
 
-public Person(){}
+    public Person() {
+    }
 
     public Person(PersonId id, String phoneNumber, String cityOfLiving) {
         this.id = id;

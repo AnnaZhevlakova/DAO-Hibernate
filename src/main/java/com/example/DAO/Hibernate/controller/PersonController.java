@@ -21,39 +21,44 @@ public class PersonController {
 
     }
 
-
     @GetMapping("/by-city")
-    public ResponseEntity<?> fetchCityByСlientName(String city) throws Exception {
+    public ResponseEntity<?> fetchPersonByCity(String city) throws Exception {
         var result = personService.getPersonsByCity(city);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
+
     @GetMapping("/by-age")
-    public ResponseEntity<?> fetchCityByAge(int age) throws Exception {
-        var result = personService.getByAgeLessThanOrderByIdAgeAsc(age);
+    public ResponseEntity<?> fetchPersonByAge(int age) throws Exception {
+        var result = personService.getPersonByAgeLessThanOrderByAgeAsc(age);
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
+
+    @GetMapping("/by-name-surname")
+    public ResponseEntity<?> fetchPersonByNameAndSurname(String name, String surname) throws Exception {
+        var result = personService.getPersonByNameAndSurname(name, surname);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<?> createPerson(@Valid @RequestBody PersonDto personDto){
+    public ResponseEntity<?> createPerson(@Valid @RequestBody PersonDto personDto) {
         var personId = personService.addPerson(personDto);
-        return new ResponseEntity<>(personId,HttpStatus.CREATED);
+        return new ResponseEntity<>(personId, HttpStatus.CREATED);
 
     }
 
     @PutMapping
-    public ResponseEntity<?> updatePerson(@Valid @RequestBody PersonDto personDto){
+    public ResponseEntity<?> updatePerson(@Valid @RequestBody PersonDto personDto) {
         var result = personService.updatePerson(personDto);
-        return new ResponseEntity<>(result,HttpStatus.OK);
+        return new ResponseEntity<>(result, HttpStatus.OK);
 
     }
 
     @DeleteMapping
-    public ResponseEntity<?> deletePerson(@Valid @RequestBody PersonIdDto personIdDto){
+    public ResponseEntity<?> deletePerson(@Valid @RequestBody PersonIdDto personIdDto) {
         var result = personService.deletePerson(personIdDto);
-        return new ResponseEntity<>(result,HttpStatus.OK);
+        return new ResponseEntity<>(result, HttpStatus.OK);
 
     }
-
 
 
 }

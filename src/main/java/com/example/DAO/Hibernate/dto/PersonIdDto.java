@@ -2,11 +2,12 @@ package com.example.DAO.Hibernate.dto;
 
 
 public class PersonIdDto {
+
     private String name;
     private String surname;
     private int age;
 
-    public  PersonIdDto(String name, String surname, int age){
+    public PersonIdDto(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
         this.age = age;
