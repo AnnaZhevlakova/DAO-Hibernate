@@ -5,11 +5,8 @@ import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.Builder;
-import lombok.Data;
-
 
 @Builder
-@Data
 @Entity
 @Table(name = "persons", schema = "netology")
 public class Person {
@@ -22,9 +19,7 @@ public class Person {
     @Column(name = "city_of_living")
     private String cityOfLiving;
 
-
     public Person() {
-
     }
 
     public Person(PersonId id, String phoneNumber, String cityOfLiving) {

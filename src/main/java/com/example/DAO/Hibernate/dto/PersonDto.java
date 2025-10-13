@@ -1,10 +1,24 @@
 package com.example.DAO.Hibernate.dto;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 public class PersonDto {
+    @NotBlank
     private String name;
+
+    @NotBlank
     private String surname;
+
+    @NotNull
+    @Min(1)
     private int age;
+
+    @NotBlank
     private String phoneNumber;
+
+    @NotBlank
     private String cityOfLiving;
 
     public PersonDto(String name, String surname, int age, String phoneNumber, String cityOfLiving) {
