@@ -1,32 +1,17 @@
-package com.example.DAO.Hibernate.entity;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Embeddable;
+package com.example.DAO.Hibernate.dto;
 
 
-import java.io.Serializable;
+public class PersonIdDto {
 
-@Embeddable
-public class PersonId implements Serializable {
-    @Column(name = "name", nullable = false)
     private String name;
-
-    @Column(name = "surname", nullable = false)
     private String surname;
-
-    @Column(name = "age", nullable = false)
     private int age;
 
-    public PersonId() {
-
-    }
-
-    public PersonId(String name, String surname, int age) {
+    public PersonIdDto(String name, String surname, int age) {
         this.name = name;
         this.surname = surname;
         this.age = age;
     }
-
 
     public String getName() {
         return name;
@@ -52,3 +37,4 @@ public class PersonId implements Serializable {
         this.age = age;
     }
 }
+
