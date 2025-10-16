@@ -60,5 +60,9 @@ public class PersonController {
 
     }
 
+    @GetMapping("/ping")
+    public ResponseEntity<?> health() {
+        return new ResponseEntity<>("PONG", HttpStatus.OK);
+    }
 
 }
